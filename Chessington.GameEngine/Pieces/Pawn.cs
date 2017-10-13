@@ -12,12 +12,23 @@ namespace Chessington.GameEngine.Pieces
         {
             var position = board.FindPiece(this);
             var availableMoves = new List<Square>();
-            availableMoves.Add(Player == Player.Black
-                ? Square.At(position.Row + 1, position.Col)
-                : Square.At(position.Row - 1, position.Col));
-
+            if (Player == Player.Black)
+            {
+                if (PieceMoved == false)
+                {
+                    availableMoves.Add(Square.At(position.Row + 2, position.Col));
+                }
+                availableMoves.Add(Square.At(position.Row + 1, position.Col));
+            }
+            else
+            {
+                if (PieceMoved == false)
+                {
+                    availableMoves.Add(Square.At(position.Row - 2, position.Col));
+                }
+                availableMoves.Add(Square.At(position.Row - 1, position.Col));
+            }
             return availableMoves;
         }
-
     }
 }
