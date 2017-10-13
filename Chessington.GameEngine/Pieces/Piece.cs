@@ -23,5 +23,26 @@ namespace Chessington.GameEngine.Pieces
             var currentSquare = board.FindPiece(this);
             board.MovePiece(currentSquare, newSquare);
         }
+
+        public bool IsSquareOnBoard(Square square)
+        {
+            if (square.Col >= 8)
+            {
+                return false;
+            }
+            if (square.Col < 0)
+            {
+                return false;
+            }
+            if (square.Row >= 8)
+            {
+                return false;
+            }
+            if (square.Row < 0)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
