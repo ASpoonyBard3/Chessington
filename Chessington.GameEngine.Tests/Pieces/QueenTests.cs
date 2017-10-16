@@ -62,7 +62,7 @@ namespace Chessington.GameEngine.Tests.Pieces
             var moves = queen.GetAvailableMoves(board);
 
             //There are 27 valid lateral and diagonal moves. We need to make sure that no other moves are available.
-            moves.Should().HaveCount(27);
+            moves.Should().HaveCount(28);
         }
     }
 }
