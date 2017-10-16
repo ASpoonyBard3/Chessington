@@ -23,7 +23,6 @@ namespace Chessington.GameEngine.Pieces
                 availableMoves.Add(Square.At(row, position.Col));
             }
 
-
             return availableMoves;
         }
     }
